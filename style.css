@@ -1,0 +1,74 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.formulario {
+    max-width: 600px;
+    margin: auto;
+    padding: 3%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 2%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #0077ff;
+    color: white;
+    padding: 2% 5%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #55a4ff;
+}
+
+.justificado {
+    text-align: justify;
+}
+
+figcaption {
+    text-align: justify;
+    font-size: 10px;
+}
+
+#galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#galeria figure {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+}
+
+#galeria img {
+    width: 80%;
+    height: auto;
+}

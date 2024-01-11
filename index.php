@@ -22,8 +22,13 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand text-white" href="index.html">K-MARA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                    style="color: white; border-color: white;">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link text-white" aria-current="page" href="index.html">Inicio</a>
                         </li>
@@ -33,47 +38,65 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#contacto">Contacto</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#calculadora">Calcular descuento</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
+
     <div id="main-container">
         <div class="container">
 
-            <?php include_once("saludo.php")?>
+            <?php
+            session_start();
+            ?>
+
+            <section>
+                <h2 class="saludo">Hola fotógrafo, hoy es
+                    <?php include_once("saludo.php") ?>
+                </h2>
+            </section>
 
             <!-- Galería -->
             <section id="galeria" class="py-5">
                 <figure>
                     <img src="CAM1.PNG">
                     <figcaption>Canon EOS 2000D + Objetivo Canon EF-S 18-55 mm (471€)</figcaption>
+                    <figcaption class="bg-warning text-center">10%</figcaption>
                 </figure>
-                
+
                 <figure>
                     <img src="CAM2.PNG">
                     <figcaption>Cámara VBA510K002 NIKON (1413€)</figcaption>
+                    <figcaption class="bg-warning text-center">5%</figcaption>
                 </figure>
 
                 <figure>
                     <img src="CAM3.PNG">
                     <figcaption>Cámara EOS 850D + EF-S 18-135 CANON (1497€)</figcaption>
+                    <figcaption class="bg-warning text-center">10%</figcaption>
                 </figure>
 
                 <figure>
                     <img src="CAM4.PNG">
                     <figcaption>Cámara deportiva GoPro Hero 12 (449€)</figcaption>
+                    <figcaption class="bg-warning text-center">30%</figcaption>
                 </figure>
 
                 <figure>
                     <img src="CAM5.PNG">
                     <figcaption>Cámara instantánea Fujifilm Instax Mini 12 (84€)</figcaption>
+                    <figcaption class="bg-warning text-center">5%</figcaption>
                 </figure>
-                
+
                 <figure>
                     <img src="CAM6.PNG">
                     <figcaption>Cámara EVIL Sony Alpha 6100 + Objetivo SELP1650 (803€)</figcaption>
+                    <figcaption class="bg-warning text-center">50%</figcaption>
                 </figure>
             </section>
 
@@ -98,6 +121,37 @@
                         </div>
                         <button type="submit" class="botonEnviar">Enviar</button>
                     </form>
+                </div>
+            </section>
+
+            <section id="calculadora" class="container">
+                <div class="row p-5">
+                    <div class="col-md-6">
+                        <form action="calcula.php" method="post" class="calcular">
+                            <div class="form-group">
+                                <label for="precio">Precio:</label>
+                                <input type="number" name="precio" class="form-control"
+                                    placeholder="Ingresa el precio original" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="descuento">Descuento:</label>
+                                <input type="number" name="descuento" class="form-control"
+                                    placeholder="Ingresa el descuento" required />
+                            </div>
+                            <button type="submit" name="submit" class="btn btn-primary mt-3">Calcular Precio
+                                Final</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6 p-1 mt-4">
+                        <?php
+                        if (isset($_SESSION["price"])) {
+                            foreach ($_SESSION["price"] as $key => $value) {
+                                echo "<p class='bg-warning p-2 text-center'>" . $value . "</p>";
+                            }
+                            unset($_SESSION["price"]);
+                        }
+                        ?>
+                    </div>
                 </div>
             </section>
 

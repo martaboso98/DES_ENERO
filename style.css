@@ -72,3 +72,13 @@ figcaption {
     width: 80%;
     height: auto;
 }
+
+.saludo {
+    padding: 3%;
+}
+
+.resultado {
+    font-size: 18px;
+    margin-top: 20px;
+}
+

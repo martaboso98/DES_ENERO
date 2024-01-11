@@ -1,0 +1,13 @@
+# docker-compose.yml
+version: '3.9'
+services:
+  apache:
+    image: httpd:latest
+    container_name: my-apache-app
+    ports:
+      - '8080:80'
+    volumes:
+      - ./index.php:/var/www/html/index.php
+      - ./archivo1.php:/var/www/html/archivo1.php
+      - ./archivo2.php:/var/www/html/archivo2.php
+      - ./images:/var/www/html/images

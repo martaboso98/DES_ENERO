@@ -42,6 +42,8 @@
     <div id="main-container">
         <div class="container">
 
+            <?php include_once("saludo.php")?>
+
             <!-- Galería -->
             <section id="galeria" class="py-5">
                 <figure>

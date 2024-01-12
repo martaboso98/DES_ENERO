@@ -1,10 +1,7 @@
-# docker-compose.yml
-php:
-  version: 3
-  container_name: php-container 
-  build:
-    context: .
-    dockerfile: php.Dockerfile
-  ports:
-    - "8080:80"
-  
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"

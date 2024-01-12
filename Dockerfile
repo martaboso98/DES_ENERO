@@ -1,6 +1,4 @@
-FROM php:apache
-
-RUN docker-php-ext-install mysqli 
+FROM php:8.0-apache
 
 WORKDIR /var/www/html
 

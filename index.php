@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +22,7 @@
 
 <body>
     <!-- Barra de navegación-->
+    
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">
             <div class="container-fluid">
@@ -50,10 +55,6 @@
 
     <div id="main-container">
         <div class="container">
-
-            <?php
-            session_start();
-            ?>
 
             <section>
                 <h2 class="saludo">Hola fotógrafo, hoy es
